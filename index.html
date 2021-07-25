@@ -1,0 +1,300 @@
+<html>
+
+<head>
+	<title>Flight Search Engine</title>
+	<link rel="Stylesheet" href="style.css">
+	<script type="text/javascript" src="flightlist.json"></script>
+	<script>
+
+		function sum() {
+			var string1 = document.getElementById("Origin").value;
+			var string2 = document.getElementById("Destination").value;
+			// var string1= "pune";
+			// var string2= "Mumbai";
+			fetch('flightlist.json')
+				.then(function (response) {
+					return response.json();
+				})
+				.then(function (data) {
+					appendData(data);
+				})
+				.catch(function (err) {
+					console.log('error: ' + err);
+				});
+			function appendData(data) {
+				var mainContainer = document.getElementById("One-way-data");
+				for (var i = 0; i < data.length; i++) {
+					var div = document.createElement("div");
+					var answer = string1.toUpperCase().localeCompare(data[i].from.toUpperCase());
+					var answer1 = string2.toUpperCase().localeCompare(data[i].to.toUpperCase());
+					if (answer == 0 && answer1 == 0) {
+						
+						var dummy = '<div>' +
+							'<table >' +
+							'<tr>' +
+							'<td>' +
+							'<h1>' + data[i].fare + '</h1>' +
+							'</td>' +
+							'</tr>' +
+
+
+							'<tr>' +
+							'<td>' +
+							'<p>' + data[i].flightcode + '</p>' +
+							'</td>' +
+							'</tr>' +
+
+
+							'<tr>' +
+							'<td>' +
+							'<p>' + data[i].from + '</p>' +'<p> >>' +'<p>'+'<p>' + data[i].to + '</p>' +
+							'</td>' +
+							'</tr>' +
+
+							'<tr>' +
+							'<td>' +
+							'<p>' + data[i].depart + '</p>' +
+							'</td>' +
+							'</tr>' +
+
+							'<tr>' +
+							'<td>' +
+							'<p>' + data[i].arrival + '</p>' +
+							'</td>' +
+							'</tr>' +
+
+
+							'</table>' +
+							'</div>';
+						div.innerHTML = dummy;
+						//document.getElementById("One-way-data").innerHTML = dummy;
+						mainContainer.appendChild(div);
+
+					};
+
+
+				}
+			}
+		}
+	</script>
+</head>
+
+<body>
+
+	<div class="main">
+		<div class="column left">
+			<table>
+
+				<tr>
+					<div class="radio-btn">
+						<td colspan="2">
+							<input type="radio" class="btn" name="check" checked="checked"><span>One Way</span>
+							<input type="radio" class="btn" name="check"><span>Roundtrip</span>
+						</td>
+					</div>
+				</tr>
+
+				<tr>
+					<div class="info-box">
+						<td>
+							<label>Enter Origin City</label>
+						</td>
+						<td>
+							<input type="text" id="Origin" />
+						</td>
+
+					</div>
+				</tr>
+
+				<tr>
+					<div class="info-box" id="arrive-box">
+						<td>
+							<label>Enter Destination City</label>
+						</td>
+						<td>
+							<input type="text" id="Destination" />
+						</td>
+					</div>
+				</tr>
+
+				<tr>
+					<div class="select-date">
+						<td>
+							<label>Departure Date</label>
+
+						</td>
+						<td>
+							<select id="select-date">
+								<option value="0">1
+								<option value="1">2
+								<option value="2">3
+								<option value="3">4
+								<option value="4">5
+								<option value="5">6
+								<option value="6">7
+								<option value="7">8
+								<option value="8">9
+								<option value="9">10
+								<option value="10">11
+								<option value="11">12
+								<option value="12">13
+								<option value="13">14
+								<option value="14">15
+								<option value="15">16
+								<option value="16">17
+								<option value="17">18
+								<option value="18">19
+								<option value="19">20
+								<option value="20">21
+								<option value="21">22
+								<option value="22">23
+								<option value="23">24
+								<option value="24">25
+								<option value="25">26
+								<option value="26">27
+								<option value="27">28
+								<option value="28">29
+								<option value="29">30
+								<option value="30">31
+							</select>
+							<select id="select-month">
+								<option value="0">January
+								<option value="1">February
+								<option value="2">March
+								<option value="3">April
+								<option value="4">May
+								<option value="5">June
+								<option value="6">July
+								<option value="7">August
+								<option value="8">September
+								<option value="9">October
+								<option value="10">November
+								<option value="11">December
+							</select>
+							<select id="select-year">
+								<option value="0">2021
+								<option value="1">2022
+								<option value="2">2023
+								<option value="3">2024
+								<option value="4">2025
+							</select>
+						</td>
+					</div>
+				</tr>
+				<tr>
+					<div class="select-date">
+						<td>
+							<label>Return Date</label>
+						</td>
+						<td>
+							<select id="select-date">
+								<option value="0">1
+								<option value="1">2
+								<option value="2">3
+								<option value="3">4
+								<option value="4">5
+								<option value="5">6
+								<option value="6">7
+								<option value="7">8
+								<option value="8">9
+								<option value="9">10
+								<option value="10">11
+								<option value="11">12
+								<option value="12">13
+								<option value="13">14
+								<option value="14">15
+								<option value="15">16
+								<option value="16">17
+								<option value="17">18
+								<option value="18">19
+								<option value="19">20
+								<option value="20">21
+								<option value="21">22
+								<option value="22">23
+								<option value="23">24
+								<option value="24">25
+								<option value="25">26
+								<option value="26">27
+								<option value="27">28
+								<option value="28">29
+								<option value="29">30
+								<option value="30">31
+							</select>
+							<select id="select-month">
+								<option value="0">January
+								<option value="1">February
+								<option value="2">March
+								<option value="3">April
+								<option value="4">May
+								<option value="5">June
+								<option value="6">July
+								<option value="7">August
+								<option value="8">September
+								<option value="9">October
+								<option value="10">November
+								<option value="11">December
+							</select>
+							<select id="select-year">
+								<option value="0">2021
+								<option value="1">2022
+								<option value="2">2023
+								<option value="3">2024
+								<option value="4">2025
+							</select>
+						</td>
+					</div>
+				</tr>
+				<tr>
+					<div class="select-passenger">
+						<td>
+							<label>Passengers</label>
+						</td>
+						<td>
+							<select id="select-date">
+								<option value="0">1
+								<option value="1">2
+								<option value="2">3
+								<option value="3">4
+								<option value="4">5
+								<option value="5">6
+							</select>
+						</td>
+					</div>
+				</tr>
+
+				<tr>
+					<div>
+						<td colspan="2">
+							<button onclick="sum()">
+								Search
+							</button>
+						</td>
+					</div>
+				</tr>
+
+				<tr>
+					<div class="select-passenger">
+						<td colspan="2">
+							<label>Refine Flight Search</label>
+						</td>
+
+				</tr>
+
+				<tr>
+					<td colspan="2">
+						<div class="slidecontainer">
+							<input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+						</div>
+					</td>
+				</tr>
+
+			</table>
+		</div>
+		<div class="column right" style="background-color:#bbb;">
+			<div id="One-way-data"></div>
+		</div>
+	</div>
+
+</body>
+
+</html>

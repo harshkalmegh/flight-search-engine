@@ -1,0 +1,49 @@
+	 [
+		{
+			"from": "Pune",
+			"to": "Delhi",
+			"fare": "Rs.9500",
+			"flightcode": "AI-202",
+			"depart": "Depart - 10:00",
+			"arrival": "Arrive - 12:00",
+			"date": "27/07/2021"
+		},
+		{
+			"from": "Delhi",
+			"to": "Pune",
+			"fare": "Rs.9500",
+			"flightcode": "AI-203",
+			"depart": "Depart - 08:00",
+			"arrival": "Arrive - 11:00",
+			"date": "27/07/2021"
+		},
+		{
+			"from": "Pune",
+			"to": "Mumbai",
+			"fare": "Rs.9500",
+			"flightcode": "AI-204",
+			"depart": "Depart - 18:00",
+			"arrival": "Arrive - 20:00",
+			"date": "28/07/2021"
+		},
+		{
+			"from": "Mumbai",
+			"to": "Pune",
+			"fare": "Rs.9500",
+			"flightcode": "AI-205",
+			"depart": "Depart - 12:00",
+			"arrival": "Arrive - 14:00",
+			"date": "27/07/2021"
+		},
+		{
+			"from": "Delhi",
+			"to": "Banglore",
+			"fare": "Rs.9500",
+			"flightcode": "AI-206",
+			"depart": "Depart - 5:00",
+			"arrival": "Arrive - 7:00",
+			"date": "05/08/2021"
+		}
+
+	]
+
